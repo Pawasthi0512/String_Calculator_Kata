@@ -13,7 +13,7 @@ function AddNumbers(inputNumbers){
     }
 
     console.log(numberList);
-    return numberList.reduce((acc, curr) => acc + curr, 0);
+    return numberList.filter(n => n <= 1000).reduce((acc, curr) => acc + curr, 0);
 }
 
 export default AddNumbers;
