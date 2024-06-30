@@ -24,3 +24,8 @@ test('should handle new lines between numbers', () => {
     const result = AddNumbers('1\n2,3');
     expect(result).toBe(6);
 });
+
+test('should handle different delimiters', () => {
+    const result = AddNumbers('//;\n1;2');
+    expect(result).toBe(3);
+});
