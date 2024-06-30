@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import AddNumbers from '../utils/AddNumbers';
 
 const StringCalculatorComponent = () => {
   const [input, setInput] = useState('');
-  console.log(input);
+  const [result, setResult] = useState(null);
+
+  const handleCalculate = () => {
+    const res = AddNumbers(input);
+    console.log(res);
+    setResult(res);
+  }
 
   return (
     <div>
@@ -13,7 +20,8 @@ const StringCalculatorComponent = () => {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Enter numbers"
       />
-      <button >Calculate</button>
+      <button onClick={handleCalculate}>Calculate</button>
+      {result !== null && <div>Result: {result}</div>}
     </div>
   );
 };

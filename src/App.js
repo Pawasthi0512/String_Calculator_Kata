@@ -1,5 +1,5 @@
 import React from 'react';
-import StringCalculatorComponent from './StringCalculatorComponent.js';
+import StringCalculatorComponent from './components/StringCalculatorComponent.js';
 
 function App() {
   return (
