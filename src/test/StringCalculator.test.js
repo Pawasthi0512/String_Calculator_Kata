@@ -14,3 +14,8 @@ test('should return the sum of two numbers', () => {
     const result = AddNumbers('1,2');
     expect(result).toBe(3);
 });
+
+test('should handle an unknown amount of numbers', () => {
+    const result = AddNumbers('1,2,3,4');
+    expect(result).toBe(10);
+});
