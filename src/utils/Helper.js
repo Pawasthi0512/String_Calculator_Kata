@@ -5,7 +5,8 @@ function getNumbersList (inputNumbers) {
         return [];
     }
 
-    const numberList = inputNumbers.split(',').map(Number);
+    const delimiters = [',', '\n'];
+    const numberList = inputNumbers.split(new RegExp(`[${delimiters.join('')}]`)).map(Number);
 
     return numberList;
 }
