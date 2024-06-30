@@ -1,7 +1,10 @@
+import React from 'react';
+import StringCalculatorComponent from './StringCalculatorComponent.js';
+
 function App() {
   return (
     <div>
-      Hello World!
+      <StringCalculatorComponent />
     </div>
   );
 }
