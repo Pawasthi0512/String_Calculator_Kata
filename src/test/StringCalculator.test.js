@@ -38,3 +38,19 @@ test('should ignore numbers greater than 1000', () => {
     const result = AddNumbers('2,1001');
     expect(result).toBe(2);
 });
+
+test('should handle delimiters of any length', () => {
+    const result = AddNumbers('//[***]\n1***2***3');
+    expect(result).toBe(6);
+});
+  
+test('should handle multiple delimiters', () => {
+    const result = AddNumbers('//[*][%]\n1*2%3');
+    expect(result).toBe(6);
+});
+  
+test('should handle multiple delimiters with length longer than one char', () => {
+    const result = AddNumbers('//[**][%%]\n1**2%%3');
+    expect(result).toBe(6);
+});
+  
