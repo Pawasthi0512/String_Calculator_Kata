@@ -14,9 +14,9 @@ function getNumbersList (inputNumbers) {
         } else {
             delimiters.push(delimiterPart[2]);
         }
-      }
-    const numberList = inputNumbers.split(new RegExp(`[${delimiters.join('')}]`)).map(Number);
-
+    }
+    const delimiterPattern = new RegExp(delimiters.map(d => d.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')).join('|'));
+    const numberList = inputNumbers.split(delimiterPattern).map(Number);
     return numberList;
 }
 
