@@ -17,6 +17,11 @@ function getNumbersList (inputNumbers) {
     }
     const delimiterPattern = new RegExp(delimiters.map(d => d.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')).join('|'));
     const numberList = inputNumbers.split(delimiterPattern).map(Number);
+
+
+    // // This approach will be applied for all strings having numbers
+    // const numbers = inputNumbers.match(/-?\d+/g);
+    // const numberList =  numbers ? numbers.map(Number) : [];
     return numberList;
 }
 
